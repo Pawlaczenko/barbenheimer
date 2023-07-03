@@ -12,7 +12,7 @@
     <title>Barbenheimer Excitement Meter</title>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-    <meta property='og:title' content='Barbenheimer Excitement Meter'/>
+    <meta property='og:title' content='Barbenheimer Excitement Meter 21-07-2023'/>
     <meta property='og:image' id="twitter-image" content='https://i.ibb.co/7GPd84T/Screenshot-1143.png'/>
     <meta property='og:description' content='How excited are you for Barbenheimer?'/>
     <meta property='og:url' content='https://pawlaczenko.github.io/barbenheimer/'/>
@@ -51,7 +51,6 @@
             const value = document.getElementById('slider').value;
             const tweetMessage = `Barbie - ${value}%, Oppenheimer - ${100-value}%`;
             const tweetUrl = window.location.href;
-            console.log(document.getElementById('twitter-image'));
 
             html2canvas(document.querySelector("#capture")).then(canvas => {
                 document.getElementById('twitter-image').setAttribute('content', canvas.toDataURL('image/png'));

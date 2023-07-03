@@ -195,37 +195,35 @@ body {
 }
 
 @media only screen and (max-width: 900px) {
-    body {
-        --image-width: 90%;
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "images images" "barbie oppen";
+        gap: 10px;
+    
+        align-items: self-end;
+        justify-items: center;
     }
 
-    .score-containter {
-        left: 0%;
-        top: unset;
-        bottom: -100%;
-        width: 100%;
+    .images {
+        width: 90%;
     }
 
-    .score-containter {
-        left: 0%;
-        top: unset;
-        bottom: -100%;
+    .title {
         width: 100%;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+
+        transform: translateX(-50%);
     }
 
     .timer {
-        font-size: 24px;
+        background-clip: unset;
+        color: white;
+        font-size: 20px;
     }
 
-    .logos {
-        /* position: unset; */
-    }
-
-    .logo-b {
-        left: 0;
-    }
-    
-    .logo-o{
-        right: 0;
+    .logo {
+        align-self: center;
     }
 }
