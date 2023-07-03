@@ -109,9 +109,9 @@ body {
 .label {
     display: block;
     position: absolute;
-    left:15%;
+    left:25%;
     top:-25px;
-    width: 70% !important;
+    width: 50% !important;
     border-radius: 10px;
 }
 
