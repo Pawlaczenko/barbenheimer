@@ -13,7 +13,7 @@
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     <meta property='og:title' content='Barbenheimer Excitement Meter'/>
-    <meta property='og:image' id="twitter-image" content='https://miro.medium.com/v2/resize:fit:720/format:webp/1*Zt2xYrnG817YPjzrwN4G3A.png'/>
+    <meta property='og:image' id="twitter-image" content='https://i.ibb.co/7GPd84T/Screenshot-1143.png'/>
     <meta property='og:description' content='How excited are you for Barbenheimer?'/>
     <meta property='og:url' content='https://pawlaczenko.github.io/barbenheimer/'/>
     <meta property='og:image:width' content='1200' />
@@ -51,9 +51,13 @@
             const value = document.getElementById('slider').value;
             const tweetMessage = `Barbie - ${value}%, Oppenheimer - ${100-value}%`;
             const tweetUrl = window.location.href;
+            console.log(document.getElementById('twitter-image'));
 
-            const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetMessage)}&url=${encodeURIComponent(tweetUrl)}`;
-            window.open(twitterShareUrl, '_blank', 'width=550,height=420');
+            html2canvas(document.querySelector("#capture")).then(canvas => {
+                document.getElementById('twitter-image').setAttribute('content', canvas.toDataURL('image/png'));
+                const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetMessage)}&url=${encodeURIComponent(tweetUrl)}`;
+                window.open(twitterShareUrl, '_blank', 'width=550,height=420');
+            });
         });
       </script>
 </body>
