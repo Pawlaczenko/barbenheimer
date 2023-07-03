@@ -171,13 +171,27 @@ body {
     cursor: col-resize;
 }
 
-.seats {
-    background: url('./assets/seats.png') center/contain repeat-x;
-    width: 100%;
-    height: 100px;
+#twitter-share-button {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    right:15px;
+    bottom:15px;
+    background: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#twitter-share-button:hover {
+    background-color: #1DA1F2;
+}
+
+#twitter-share-button button {
+    width: 100%;
 }
 
 @media only screen and (max-width: 900px) {

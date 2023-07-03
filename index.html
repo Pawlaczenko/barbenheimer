@@ -14,10 +14,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Barbenheimer Excitement Meter">
     <meta name="twitter:description" content="How excited are you for Barbenheimer?">
-    <meta name="twitter:image" id="twitter-image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2MVvE9X00ONfS9RrxtfriDs7uXtrhPXcQ_wK6BexNrg&s">
+    <meta name="twitter:image" id="twitter-image" content="">
 </head>
 <body>
-    <main class="container">
+    <main id="capture" class="container">
         <div class="logo logo-b"><img src="./assets/label.png" class="label" /><img src="./assets/logo-b.png" /></div>
         <div class="images">
             <div class="score-containter">
@@ -36,35 +36,23 @@
         </div>
         <div class="logo logo-o"><img src="./assets/label.png" class="label" /><img src="./assets/logo-o.png" /></div>
     </main>
-    <button id="twitter-share-button">Share on Twitter</button>
+    <figure id="twitter-share-button">
+        <img src="./assets/twitter.png" alt="twitter" />
+    </figure>
+    <script src="./html2canvas.js"></script>
     <script src="./index.js"></script>
     <script>
-
-
-var canvas = document.createElement('canvas');
-    canvas.width = 400; // Set the desired width of the canvas
-    canvas.height = 300; // Set the desired height of the canvas
-    
-    // Get the 2D drawing context of the canvas
-    var ctx = canvas.getContext('2d');
-    
-    // Draw something on the canvas
-    ctx.fillStyle = 'red';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    // Convert the canvas to a data URL
-    var imageURL = canvas.toDataURL('image/png');
-    
-    // Set the 'twitter:image' meta tag dynamically
-    document.getElementById('twitter-image').setAttribute('content', imageURL);
-
         document.getElementById('twitter-share-button').addEventListener('click', function() {
             const value = document.getElementById('slider').value;
             const tweetMessage = `Barbie - ${value}%, Oppenheimer - ${100-value}%`;
             const tweetUrl = window.location.href;
+
+            html2canvas(document.querySelector("#capture")).then(canvas => {
+                document.getElementById('twitter-image').setAttribute('content', canvas.toDataURL('image/png'));
+                const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetMessage)}&url=${encodeURIComponent(tweetUrl)}`;
+                window.open(twitterShareUrl, '_blank', 'width=550,height=420');
+            });
       
-            const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetMessage)}&url=${encodeURIComponent(tweetUrl)}`;
-            window.open(twitterShareUrl, '_blank', 'width=550,height=420');
         });
       </script>
 </body>

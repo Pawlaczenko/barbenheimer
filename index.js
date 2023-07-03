@@ -25,13 +25,6 @@ function countdownToJuly21() {
     timer.innerText = `${days.toString().padStart(2, '0')}d : ${hours.toString().padStart(2, '0')}h : ${minutes.toString().padStart(2, '0')}m : ${seconds.toString().padStart(2, '0')}s`;
 }
 
-const handleHash = (barbie, oppenheimer) => {
-    var currentURL = window.location.href;
-    const hash = `/barbie=${barbie}&oppenheimer=${oppenheimer}`;
-
-    // document.location.search = hash;
-}
-
 const applyStyles = () => {
     const value = slider.value;
     const width = `${value}%`;
@@ -44,8 +37,6 @@ const applyStyles = () => {
 
     barbieScore.innerText = `${value}%`;
     oppenheimerScore.innerText = `${100 - value}%`;
-
-    handleHash(value,100-value);
 }
 
 slider.addEventListener('input', function() {
