@@ -33,6 +33,7 @@ const applyStyles = () => {
 
     image1.style.width = width;
     container.style.background = gradient;
+    timer.style.backgroundImage = gradient;
 
     barbieScore.innerText = `${value}%`;
     oppenheimerScore.innerText = `${100 - value}%`;

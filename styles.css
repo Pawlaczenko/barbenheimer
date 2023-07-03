@@ -22,37 +22,38 @@ body {
 
     position: relative;
     overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    grid-template-areas: "barbie images oppen";
+    gap: 10px;
+
+    align-items: center;
+    justify-items: center;
 }
 
 .title {
-    color: white;
-    display: block;
     text-align: center;
     font-size: 18px;
-
-    position: absolute;
-    top: -20%;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%);
 }
 
 .timer {
-    color: #001201;
     letter-spacing: 2px;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .images {
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-55%);
+    grid-area: images;
 
-    width: var(--image-width);
+    width: 100%;
     aspect-ratio: var(--ratio);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
     background: white;
     border-radius: 15px;
@@ -67,6 +68,10 @@ body {
 .images-pan {
     width: 100%;
     height: 100%;
+    border-radius: inherit;
+    overflow: hidden; 
+
+    position: relative;
 }
 
 .image {
@@ -79,21 +84,9 @@ body {
     top: 0;
 }
 
-.logos {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 200%;
-    z-index: 100;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .logo {
     position: relative;
-    width: 200px;
+    width: 55%;
     aspect-ratio: 2/1;
     
     background: rgba(255,255,255,.75);
@@ -103,6 +96,14 @@ body {
     padding: 15px;
     box-sizing: content-box;
     border: 5px solid white;
+}
+
+.logo-b {
+    grid-area: barbie;
+}
+
+.logo-o {
+    grid-area: oppen;
 }
 
 .label {
@@ -130,15 +131,12 @@ body {
 }
 
 .score-containter {
-    position: absolute;
-    z-index: 10;
-    left: -5%;
-    top: -40px;
+    width: 100%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 110%;
+    width: 100%;
 }
 
 .score {
@@ -164,11 +162,11 @@ body {
 #slider {
     opacity: 0;
     position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-55%);
+    top: 0;
+    left: 0;
+    z-index: 1000;
 
-    width: var(--image-width);
+    width: 100%;
     aspect-ratio: var(--ratio);
     cursor: col-resize;
 }

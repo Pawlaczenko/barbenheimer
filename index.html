@@ -17,26 +17,24 @@
 </head>
 <body>
     <main class="container">
+        <div class="logo logo-b"><img src="./assets/label.png" class="label" /><img src="./assets/logo-b.png" /></div>
         <div class="images">
-            <div class="title">
-                <p class="question">How excited are you for Barbenheimer?</p>
-                <p class="timer">00 : 00 : 00 : 00</p>
+            <div class="score-containter">
+                <div class="score" id="barbie-score"></div>
+                <div class="title">
+                    <p class="question">How excited are you for Barbenheimer?</p>
+                    <p class="timer">00 : 00 : 00 : 00</p>
+                </div>
+                <div class="score" id="oppenheimer-score"></div>
             </div>
             <div class="images-pan">
+                <input type="range" id="slider" min="0" max="100" value="50">
                 <figure id="oppenheimer" class="image"></figure>
                 <figure id="barbie" class="image"></figure>
             </div>
-            <div class="score-containter">
-                <div class="score" id="barbie-score"></div>
-                <div class="score" id="oppenheimer-score"></div>
-            </div>
-            <div class="logos">
-                <div class="logo logo-b"><img src="./assets/label.png" class="label" /><img src="./assets/logo-b.png" /></div>
-                <div class="logo logo-o"><img src="./assets/label.png" class="label" /><img src="./assets/logo-o.png" /></div>
-            </div>
         </div>
-        <div class="seats"></div>
-        <input type="range" id="slider" min="0" max="100" value="50">
+        <div class="logo logo-o"><img src="./assets/label.png" class="label" /><img src="./assets/logo-o.png" /></div>
+        <!-- <div class="seats"></div> -->
     </main>
     <script src="./index.js"></script>
 </body>
