@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@800&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Your Website Title">
+    <meta property="og:description" content="Description of your website">
+    <meta property="og:image" content="./assets/barbie.jpg">
+    <meta property="og:url" content="URL of your website">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.svg">
+    <title>Barbenheimer Excitement Meter</title>
+</head>
+<body>
+    <main class="container">
+        <div class="images">
+            <div class="title">
+                <p class="question">How excited are you for Barbenheimer?</p>
+                <p class="timer">00 : 00 : 00 : 00</p>
+            </div>
+            <div class="images-pan">
+                <figure id="oppenheimer" class="image"></figure>
+                <figure id="barbie" class="image"></figure>
+            </div>
+            <div class="score-containter">
+                <div class="score" id="barbie-score"></div>
+                <div class="score" id="oppenheimer-score"></div>
+            </div>
+            <div class="logos">
+                <div class="logo logo-b"><img src="./assets/label.png" class="label" /><img src="./assets/logo-b.png" /></div>
+                <div class="logo logo-o"><img src="./assets/label.png" class="label" /><img src="./assets/logo-o.png" /></div>
+            </div>
+        </div>
+        <div class="seats"></div>
+        <input type="range" id="slider" min="0" max="100" value="50">
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
