@@ -39,9 +39,9 @@
     <button id="twitter-share-button">Share on Twitter</button>
     <script src="./index.js"></script>
     <script>
-        document.getElementById('twitter-share-button').addEventListener('click', function() {
 
-            var canvas = document.createElement('canvas');
+
+var canvas = document.createElement('canvas');
     canvas.width = 400; // Set the desired width of the canvas
     canvas.height = 300; // Set the desired height of the canvas
     
@@ -58,6 +58,7 @@
     // Set the 'twitter:image' meta tag dynamically
     document.getElementById('twitter-image').setAttribute('content', imageURL);
 
+        document.getElementById('twitter-share-button').addEventListener('click', function() {
             const value = document.getElementById('slider').value;
             const tweetMessage = `Barbie - ${value}%, Oppenheimer - ${100-value}%`;
             const tweetUrl = window.location.href;
